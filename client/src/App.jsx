@@ -60,17 +60,17 @@ const App = () => {
   }, [history.present]);
 
   const fetchUsers = async () => {
-    const response = await axios.get("http://localhost:3000/users");
+    const response = await axios.get("https://crud-app-server-3xf5.onrender.com/users");
     dispatch({ type: "SET", newPresent: response.data });
   };
 
   const fetchAvailableDates = async () => {
-    const response = await axios.get("http://localhost:3000/availableDates");
+    const response = await axios.get("https://crud-app-server-3xf5.onrender.com/availableDates");
     setAvailableDates(response.data);
   };
 
   const addUser = async () => {
-    const response = await axios.post("http://localhost:3000/users", {
+    const response = await axios.post("https://crud-app-server-3xf5.onrender.com/users", {
       name,
       userName,
       email,
@@ -83,7 +83,7 @@ const App = () => {
 
   const updateUser = async () => {
     const response = await axios.put(
-      `http://localhost:3000/users/${editUserId}`,
+      `https://crud-app-server-3xf5.onrender.com/users/${editUserId}`,
       { name, userName, email }
     );
     const updatedUsers = users.map((user) =>
@@ -98,7 +98,7 @@ const App = () => {
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:3000/users/${id}`);
+    await axios.delete(`https://crud-app-server-3xf5.onrender.com/users/${id}`);
     dispatch({
       type: "SET",
       newPresent: users.filter((user) => user.id !== id),
@@ -135,9 +135,9 @@ const App = () => {
   const saveCellChange = async (rowIndex) => {
     const user = users[rowIndex];
     if (user.id) {
-      await axios.put(`http://localhost:3000/users/${user.id}`, user);
+      await axios.put(`https://crud-app-server-3xf5.onrender.com/users/${user.id}`, user);
     } else {
-      const response = await axios.post("http://localhost:3000/users", user);
+      const response = await axios.post("https://crud-app-server-3xf5.onrender.com/users", user);
       const updatedUsers = [...users];
       updatedUsers[rowIndex] = response.data;
       dispatch({ type: "SET", newPresent: updatedUsers });
@@ -209,7 +209,7 @@ const App = () => {
   const handleDateChange = async (e) => {
     setSelectedDate(e.target.value);
     const response = await axios.get(
-      `http://localhost:3000/users?date=${e.target.value}`
+      `https://crud-app-server-3xf5.onrender.com/users?date=${e.target.value}`
     );
     dispatch({ type: "SET", newPresent: response.data });
   };
