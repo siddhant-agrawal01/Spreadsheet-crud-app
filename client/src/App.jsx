@@ -1,6 +1,7 @@
 /* eslint-disable no-case-declarations */
 import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -221,9 +222,12 @@ const App = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container mx-auto mt-10">
-      <h1 className="text-2xl font-bold mb-4">React User</h1>
-      <form onSubmit={handleSubmit} className="mb-4">
+      <h1 className="text-2xl font-bold mb-8 ">Fill The Enteries</h1>
+
+      <form onSubmit={handleSubmit} className="mb-4 flex items-center justify-space">
         <input
           type="text"
           value={name}
@@ -245,14 +249,28 @@ const App = () => {
           placeholder="Email"
           className="border p-2 mr-2"
         />
-        <button type="submit" className="bg-blue-500 text-white p-2">
+        <div className=" p-2 flex item-center justify-center ">
+        <button type="submit" className="bg-blue-500 text-white p-2  mr-2 rounded">
           {isEditing ? "Update User" : "Add User"}
         </button>
-      </form>
-      <div className="mb-4">
         <button
           onClick={() => dispatch({ type: "UNDO" })}
-          className="bg-yellow-500 text-white p-2 mr-2"
+          className="bg-yellow-400 text-white p-2 mr-2 rounded"
+        >
+          Undo
+        </button>
+        <button
+          onClick={() => dispatch({ type: "REDO" })}
+          className="bg-green-500 text-white p-2 rounded"
+        >
+          Redo
+        </button>
+        </div>
+      </form>
+      {/* <div className="mb-4">
+        <button
+          onClick={() => dispatch({ type: "UNDO" })}
+          className="bg-yellow-400 text-white p-2 mr-2"
         >
           Undo
         </button>
@@ -262,7 +280,7 @@ const App = () => {
         >
           Redo
         </button>
-      </div>
+      </div> */}
       <div className="mb-4">
         <label htmlFor="date">Select Date: </label>
         <select
@@ -279,7 +297,7 @@ const App = () => {
           ))}
         </select>
       </div>
-      <table className="min-w-full bg-white">
+      <table className="min-w-full bg-zinc-50">
         <thead>
           <tr>
             <th className="py-2">#</th>
@@ -287,7 +305,7 @@ const App = () => {
               Name
               <button
                 onClick={() => deleteColumn("name")}
-                className="bg-red-500 text-white p-2 ml-2"
+                className="bg-red-500 text-white  ml-2 rounded-2xl  h-6 w-6 "
               >
                 x
               </button>
@@ -296,7 +314,7 @@ const App = () => {
               Username
               <button
                 onClick={() => deleteColumn("userName")}
-                className="bg-red-500 text-white p-2 ml-2"
+                className="bg-red-500 text-white p-2 ml-2 rounded-2xl  h-6 w-6 pt-0"
               >
                 x
               </button>
@@ -305,14 +323,17 @@ const App = () => {
               Email
               <button
                 onClick={() => deleteColumn("email")}
-                className="bg-red-500 text-white p-2 ml-2"
+                className="bg-red-500 text-white p-2 ml-2 rounded-2xl  h-6 w-6 pt-0"
               >
                 x
               </button>
             </th>
-            <th className="py-2">Actions</th>
+            <th className="py-2 flex justify-around">Actions
+            
+      
+            </th>
             <th className="py-2">
-              <button onClick={addRow} className="bg-green-500 text-white p-2">
+              <button onClick={addRow} className="bg-green-500 text-white rounded-2xl  h-6 w-6 pt-0">
                 +
               </button>
             </th>
@@ -379,13 +400,13 @@ const App = () => {
               <td className="border px-4 py-2">
                 <button
                   onClick={() => startEditing(user)}
-                  className="bg-yellow-500 text-white p-2 mr-2"
+                  className="bg-yellow-400 text-white p-2 mr-2 rounded"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => deleteRow(index)}
-                  className="bg-red-500 text-white p-2"
+                  className="bg-red-500 text-white rounded p-2"
                 >
                   Delete
                 </button>
@@ -395,6 +416,7 @@ const App = () => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 
