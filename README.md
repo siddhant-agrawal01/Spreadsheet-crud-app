@@ -69,7 +69,7 @@ To run the project locally, follow these steps:
    ```
 7. For Frontend:
    ```
-   cd ciient
+   cd client
    npm install
    ```
 
