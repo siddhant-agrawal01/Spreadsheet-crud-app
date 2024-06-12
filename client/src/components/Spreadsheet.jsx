@@ -95,53 +95,53 @@
 //     return null;
 //   };
 
-//   // return (
-//   //   <div className="overflow-x-auto">
-//   //     <table className="min-w-full bg-white border border-gray-200">
-//   //       <thead className="bg-gray-100">
-//   //         <tr>
-//   //           <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">#</th>
-//   //           <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
-//   //           <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Username</th>
-//   //           <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Email</th>
-//   //           <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Action</th>
-//   //         </tr>
-//   //       </thead>
-//   //       <tbody className="bg-white">
-//   //         {users.map((user, index) => (
-//   //           <tr key={user.id}>
-//   //             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{index + 1}</td>
-//   //             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{user.name}</td>
-//   //             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{user.userName}</td>
-//   //             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{user.email}</td>
-//   //             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-//   //               <button
-//   //                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-1"
-//   //                 onClick={() => handleView(user.id)}
-//   //               >
-//   //                 View
-//   //               </button>
-//   //               <button
-//   //                 className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mx-1"
-//   //                 onClick={() => handleEdit(user.id)}
-//   //               >
-//   //                 Edit
-//   //               </button>
-//   //               <button
-//   //                 className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-1"
-//   //                 onClick={() => handleDelete(user.id)}
-//   //               >
-//   //                 Delete
-//   //               </button>
-//   //             </td>
-//   //           </tr>
-//   //         ))}
-//   //       </tbody>
-//   //     </table>
-//   //     {renderViewModal()}
-//   //     {renderEditModal()}
-//   //   </div>
-//   // );
+//   return (
+//     <div className="overflow-x-auto">
+//       <table className="min-w-full bg-white border border-gray-200">
+//         <thead className="bg-gray-100">
+//           <tr>
+//             <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">#</th>
+//             <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
+//             <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Username</th>
+//             <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Email</th>
+//             <th className="px-6 py-3 border-b border-gray-200 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Action</th>
+//           </tr>
+//         </thead>
+//         <tbody className="bg-white">
+//           {users.map((user, index) => (
+//             <tr key={user.id}>
+//               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{index + 1}</td>
+//               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{user.name}</td>
+//               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{user.userName}</td>
+//               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{user.email}</td>
+//               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+//                 <button
+//                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-1"
+//                   onClick={() => handleView(user.id)}
+//                 >
+//                   View
+//                 </button>
+//                 <button
+//                   className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mx-1"
+//                   onClick={() => handleEdit(user.id)}
+//                 >
+//                   Edit
+//                 </button>
+//                 <button
+//                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-1"
+//                   onClick={() => handleDelete(user.id)}
+//                 >
+//                   Delete
+//                 </button>
+//               </td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//       {renderViewModal()}
+//       {renderEditModal()}
+//     </div>
+//   );
 // };
 
 // export default Spreadsheet;
