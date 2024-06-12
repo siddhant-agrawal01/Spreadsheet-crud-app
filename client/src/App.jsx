@@ -319,11 +319,11 @@ const App = () => {
                 x
               </button>
             </th>
-            <th className="py-2">
+            <th className="py-2 ">
               Email
               <button
                 onClick={() => deleteColumn("email")}
-                className="bg-red-500 text-white p-2 ml-2 rounded-2xl  h-6 w-6 pt-0"
+                className="bg-red-500 text-white p-2 ml-2 rounded-2xl pt-0 h-6 w-6 "
               >
                 x
               </button>
