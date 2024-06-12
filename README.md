@@ -23,12 +23,12 @@ This project is a fully functional CRUD (Create, Read, Update, Delete) applicati
 
 ## Technologies Used
 
-- **Database**: POSTGRESQL
+- **Database**: PostgreSQL
 - **ORM**: PRISMA
 - **Frontend**: React
 - **CSS Framework**: Tailwind CSS
 - **Backend**: ExpressJS and Node.js
-- **Hosting**: [VERCEL]
+- **Hosting**: VERCEL
 
 ## Getting Started
 
@@ -39,42 +39,47 @@ To run the project locally, follow these steps:
    git clone https://github.com/your-username/spreadsheet-crud-app.git
    ```
 
-2. Install the dependencies:
+2. For backend:
    ```
-   cd spreadsheet-crud-app
+   cd server
    npm install
    ```
 
 3. Set up the postgresql database:
    - Create a new postgresql database.
    - Update the database configuration using seed.js file.
+   
+   ```
+   node prisma/seed.js
+   ```
+   
+4. configure env file :
+   ```
+   DATABASE_URL=
+   PORT= 3000
+   ```
 
-4. Run the database migrations:
+5. Run the database migrations:
    ```
    npx prisma generate
    ```
 
-5. Start server:
+6. Start server:
    ```
    node server.js
    ```
-4. For Frontend:
+7. For Frontend:
    ```
    cd ciient
    npm install
    ```
 
-5. Run the client:
+8. Run the client:
    ```
    npm run dev
    
-6. Open the application in your browser at `http://localhost:3000`.
+9. Open the application in your browser at `http://localhost:3000`.
 
 ## Deployment
 
 The application is deployed and accessible at the following URL: [https://spreadsheet-crud-app.vercel.app/]
-
-## ChatGPT Assistance
-
-
-
